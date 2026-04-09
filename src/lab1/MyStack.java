@@ -11,13 +11,16 @@ public class MyStack {
     }
 
     public void push (int x){
-        if (top++ >= list.length){
+        top++;
+        if (top >= list.length) {
+            top--;
             System.out.println("Warning you can't pop empty stack.");
             return;
         }else {
-            top++;
+            list[top] = x;
         }
-        list[top] = x;
+
+
     }
 
     public int pop (){

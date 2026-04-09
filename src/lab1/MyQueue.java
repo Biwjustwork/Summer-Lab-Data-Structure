@@ -2,7 +2,7 @@ package lab1;
 
 public class MyQueue {
     protected int front = 0;
-    protected int rear = 1;
+    protected int rear = 0;
     protected int[] list;
 
     public MyQueue(int size) {
@@ -11,14 +11,15 @@ public class MyQueue {
 
 
     public void enQueue(int x){
-        if (rear != -1){
+        if (front > rear){
             System.out.println("Warning: Queue is full.");
-        }else if (((rear+1)% list.length == front% list.length) && (front > rear)){
+        }else if (((rear+1)% list.length == front% list.length) && (front < rear)){
             System.out.println("Warning: Queue is full.");
 
         }else {
-            rear++;
             list[rear% list.length]= x;
+            rear++;
+
         }
     }
 

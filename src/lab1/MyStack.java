@@ -14,8 +14,7 @@ public class MyStack {
         top++;
         if (top >= list.length) {
             top--;
-            System.out.println("Warning you can't pop empty stack.");
-            return;
+            System.out.println("Warning: Stack is full");
         }else {
             list[top] = x;
         }
@@ -24,15 +23,13 @@ public class MyStack {
     }
 
     public int pop (){
+        if (top == -1){
+            System.out.println("Warning: You can't pop from an empty stack.");
+            return 0;
+        }
         int temp = list[top];
         list[top] = 0;
-
-        if (top == -1){
-            System.out.println("Warning you can't pop empty stack.");
-            return 0;
-        } else {
-            top--;
-        }
+        top--;
         return temp;
     }
 

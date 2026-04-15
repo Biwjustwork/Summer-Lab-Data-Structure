@@ -11,7 +11,7 @@ public class AdvStack extends MyStack{
     }
 
     public void search(int n){
-        for (int i=0; i< list.length -1;i++ ){
+        for (int i=0; i< list.length;i++ ){
             if (n == list[i]){
                 System.out.println("TRUE");
                 return;
@@ -21,9 +21,10 @@ public class AdvStack extends MyStack{
     }
 
     public void clear(){
-        for (int i=0; i< list.length-1;i++){
+        for (int i=0; i< list.length;i++){
             list[i] = 0;
         }
+        top =-1;
     }
 
     public void doublePop(){

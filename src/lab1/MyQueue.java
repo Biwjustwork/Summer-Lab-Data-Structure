@@ -13,8 +13,8 @@ public class MyQueue {
     public void enQueue(int x){
         if (rear - front == list.length){
             System.out.println("Warning: Queue is full.");
-        } else {
-            list[rear % list.length] = x;
+        }else {
+            list[rear% list.length]= x;
             rear++;
         }
     }
@@ -23,7 +23,7 @@ public class MyQueue {
         if (front == rear){
             System.out.println("Warning: Queue is empty.");
             return 0;
-        } else {
+        }else {
             int temp = list[front % list.length];
             list[front % list.length] = 0;
             front++;

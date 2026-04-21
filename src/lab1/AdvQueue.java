@@ -6,28 +6,39 @@ public class AdvQueue extends MyQueue{
         super(size);
     }
 
-    public void search(int n){
-        for (int i=0; i< list.length -1;i++ ){
+    public boolean search(int n){
+        if (n == 0){
+            return false;
+        }
+        for (int i=0; i< list.length;i++ ){
             if (n == list[i]){
-                System.out.println("TRUE");
-                return;
+                return true;
             }
         }
-        System.out.println("FALSE");
+        return false;
     }
 
     public void clear(){
-        for (int i=0; i< list.length-1;i++){
+        rear = 0;
+        front =0;
+        for (int i=0; i< list.length;i++){
             list[i] = 0;
         }
     }
 
     public int getSize(){
-        return list.length;
+        int count =0;
+        for (int i=0; i< list.length;i++ ){
+            if (list[i] != 0){
+                count++;
+            }
+        }
+        return count;
+        //return list.length;
     }
 
     public boolean isFull(){
-        for (int i=0; i< list.length -1;i++ ){
+        for (int i=0; i< list.length;i++ ){
             if (0 == list[i]){
                 return false;
             }
@@ -36,10 +47,10 @@ public class AdvQueue extends MyQueue{
     }
 
     public int getFront() {
-        return front% list.length;
+        return list[front % list.length];
     }
 
     public int getRear() {
-        return rear% list.length;
+        return list[rear-1 % list.length];
     }
 }

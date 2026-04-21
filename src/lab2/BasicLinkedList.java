@@ -4,9 +4,8 @@ package lab2;
 public class BasicLinkedList {
     private MyNode head;
 
-    public BasicLinkedList(int x){
-        head = new MyNode(x);
-        head.setNext(null);
+    public BasicLinkedList(){
+
     }
 
     public MyNode getHead() {
@@ -34,9 +33,16 @@ public class BasicLinkedList {
     public void printAll(){
         MyNode current = head;
         while (current != null){
-        System.out.println(current.getElement());
-        current = current.getNext();
+            if (current.getNext() != null){
+                System.out.print(current.getElement() + " -> ");
+
+            }else {
+                System.out.print(current.getElement());
+            }
+            current = current.getNext();
+
         }
+        System.out.println();
     }
 
     public int getSize(){

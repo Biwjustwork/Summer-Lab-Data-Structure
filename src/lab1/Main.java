@@ -2,43 +2,40 @@ package lab1;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("=== TEST STACK ===");
-        AdvStack stack = new AdvStack(3);
-        stack.push(10);
-        stack.push(20);
-        stack.push(30);
-        stack.push(40); // ควรจะขึ้น Warning: Stack is full
-
-        System.out.print("Search 20: ");
-        stack.search(20); // ควรจะขึ้น TRUE
-
-        System.out.println("Pop: " + stack.pop()); // 30
-        stack.doublePop(); // ควรจะ pop 20, 10
-        stack.pop(); // ควรจะขึ้น Warning: You can't pop from an empty stack.
-
-        System.out.println("\n=== TEST CIRCULAR QUEUE ===");
-        AdvQueue queue = new AdvQueue(3);
-
-        // ทดสอบการ Enqueue
-        queue.enQueue(1);
-        queue.enQueue(2);
-        queue.enQueue(3);
-        queue.enQueue(4); // ควรจะขึ้น Warning: Queue is full.
-
-        System.out.print("Search 2: ");
-        queue.search(2); // ควรจะขึ้น TRUE
-
-        // ทดสอบการ Dequeue แบบ Circular (เอาออกแล้วยัดเข้าใหม่)
-        System.out.println("Dequeue: " + queue.deQueue()); // 1
-        System.out.println("Dequeue: " + queue.deQueue()); // 2
-
-        queue.enQueue(5); // คิวต้องวนกลับไปใส่ index 0
-        queue.enQueue(6); // คิวต้องวนกลับไปใส่ index 1
-        queue.enQueue(7); // ควรจะขึ้น Warning: Queue is full.
-
-        System.out.println("Dequeue: " + queue.deQueue()); // 3
-        System.out.println("Dequeue: " + queue.deQueue()); // 5
-        System.out.println("Dequeue: " + queue.deQueue()); // 6
-        queue.deQueue(); // ควรจะขึ้น Warning: Queue is empty.
+        AdvQueue AdvQueue1 = new AdvQueue(4);
+        System.out.println("enQueue 1 2 3 4 5");
+        AdvQueue1.enQueue(1);
+        AdvQueue1.enQueue(2);
+        AdvQueue1.enQueue(3);
+        AdvQueue1.enQueue(4);
+        AdvQueue1.enQueue(5); // insert more than queue size (overflow)
+        System.out.println("AdvQueue1.getSize()");
+        System.out.println(AdvQueue1.getSize()); // 4
+        System.out.println("AdvQueue1.deQueue()");
+        System.out.println(AdvQueue1.deQueue()); // 1
+        System.out.println("AdvQueue1.getFront()");
+        System.out.println(AdvQueue1.getFront()); // 2
+        System.out.println("AdvQueue1.search 0 1 3");
+        System.out.println(AdvQueue1.search(0)); // false
+        System.out.println(AdvQueue1.search(1)); // false
+        System.out.println(AdvQueue1.search(3)); // true
+        System.out.println("AdvQueue1.getSize()");
+        System.out.println(AdvQueue1.getSize()); // 3
+        System.out.println("clear");
+        AdvQueue1.clear();
+        System.out.println("AdvQueue1.search 0 1 3");
+        System.out.println(AdvQueue1.search(0)); // false
+        System.out.println(AdvQueue1.search(1)); // false
+        System.out.println(AdvQueue1.search(3)); // false
+        System.out.println("AdvQueue1.getSize()");
+        System.out.println(AdvQueue1.getSize()); // 0
+        System.out.println("enQueue 1 2 3");
+        AdvQueue1.enQueue(1);
+        AdvQueue1.enQueue(2);
+        AdvQueue1.enQueue(3);
+        System.out.println("AdvQueue1.getSize()");
+        System.out.println(AdvQueue1.getSize()); // 3
+        System.out.println("AdvQueue1.getRear()");
+        System.out.println(AdvQueue1.getRear()); // 3
     }
 }

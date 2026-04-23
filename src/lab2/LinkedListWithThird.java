@@ -17,7 +17,7 @@ public class LinkedListWithThird extends BasicLinkedList{
             System.out.println("Linked list is empty.");
             return;
         }
-        if (getSize() < 3) {
+        if (getSize() < 2) {
             System.out.println("Linked list has element less than 3.");
             return;
         }

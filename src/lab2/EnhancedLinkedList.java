@@ -35,10 +35,6 @@ public class EnhancedLinkedList extends BasicLinkedList{
             System.out.println("Linked list is empty.");
             return;
         }
-        if(getHead().getNext() == null){
-            System.out.println("Linked list has one element.");
-            return;
-        }
         MyNode current = getHead();
         while (current.getNext().getNext() != null){
             current = current.getNext();
@@ -62,15 +58,24 @@ public class EnhancedLinkedList extends BasicLinkedList{
     }
 
     public void remove(int x){
+        if(getHead() == null){
+            System.out.println("Linked list is empty.");
+            return;
+        }
         MyNode current = getHead();
         MyNode temp;
+        boolean hasRemoved = false;
         while (current.getNext() != null){
             if (current.getNext().getElement() == x){
                 temp = current.getNext().getNext();
                 current.setNext(null);
                 current.setNext(temp);
+                hasRemoved = true;
             }else {
                 current = current.getNext();
+            }
+            if (!hasRemoved){
+                System.out.println("Warning: No "+x+" in linked list");
             }
         }
     }

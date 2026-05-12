@@ -1,6 +1,8 @@
 package lab3;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class Q2 {
@@ -11,21 +13,21 @@ public class Q2 {
 
         System.out.print("Enter String : ");
         String code = input.nextLine();
-        ArrayList<String> Queue = new ArrayList<>();
+        Queue<String> queue = new LinkedList<>();
         String[] texts = code.split("");
         for (String text : texts){
-            Queue.add(text);
+            queue.add(text);
             if (text.equals("*")){
-                Queue.remove(text);
-                if (!Queue.isEmpty()){
-                    Queue.removeFirst();
+                queue.remove(text);
+                if (!queue.isEmpty()){
+                    queue.remove();
                 }
             }
         }
-        if (Queue.isEmpty()){
+        if (queue.isEmpty()){
             System.out.println("Nothing");
         }else {
-            for (String text : Queue){
+            for (String text : queue){
                 System.out.print(text);
             }
         }

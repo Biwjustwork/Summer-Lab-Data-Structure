@@ -3,20 +3,24 @@ package lab4;
 import java.util.Random;
 
 public class Q2 {
+    /**
+     * Q2
+     * length 10 -> 0 ms, 1000 -> 0 ms, 100000 -> 1 ms, 100000000 -> 33 ms
+     */
     public static void main(String[] args) {
-        long startTime = System.currentTimeMillis();
         Random random = new Random();
-        int[] myArr = random.ints(10, 1, 5).toArray();
-        sumAll(myArr);
+        int[] myArr = random.ints(100000000, 10, 1000000).toArray();
+        long startTime = System.currentTimeMillis();
+        System.out.println(sumAll(myArr));
         long endTime = System.currentTimeMillis();
         System.out.println("The method took " + (endTime - startTime) + " milliseconds");
     }
-    public static void sumAll(int[] x){
+    public static int sumAll(int[] x){
         int sum = 0;
-        for (int i : x){
-            sum += i;
+        for (int i = 0 ; i < x.length ; i++){
+            sum += x[i];
         }
-        System.out.println(sum);
+        return sum;
     }
 }
 

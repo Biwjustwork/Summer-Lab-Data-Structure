@@ -5,7 +5,7 @@ import java.util.Random;
 public class Q2 {
     /**
      * Q2
-     * length 10 -> 0 ms, 1000 -> 0 ms, 100000 -> 1 ms, 100000000 -> 33 ms
+     * length 10 -> 0 ms, 1000 -> 0 ms, 100000 -> 1 ms, 100000000 -> 33 ms O(n)
      */
     public static void main(String[] args) {
         Random random = new Random();

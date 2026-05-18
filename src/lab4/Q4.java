@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Q4 {
     /**
      * Q4
-     * length 10 -> 6 ms, 1000 -> 6 ms, 100000 -> 41 ms, 100000000 -> 36874 ms
+     * length 10 -> 6 ms, 1000 -> 6 ms, 100000 -> 41 ms, 100000000 -> 36874 ms O(n^3)
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

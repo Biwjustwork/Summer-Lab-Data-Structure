@@ -2,7 +2,7 @@ package lab6;
 
 public class Q4 {
     /* x = 5, y = 5, z = 0
-    1.
+
 
      */
     public static void main(String[] args)

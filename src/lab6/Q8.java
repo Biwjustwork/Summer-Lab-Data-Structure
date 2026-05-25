@@ -3,9 +3,8 @@ package lab6;
 import java.util.Scanner;
 
 public class Q8 {
-    public static void main() {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
 
         System.out.print("Enter the length of the input: ");
         int lenght = input.nextInt();

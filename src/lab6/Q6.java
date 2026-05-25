@@ -28,8 +28,11 @@ public class Q6 {
 
 
     public static int fibLoop(int n) {
-        if (n <= 1) return n;
-        int a = 0, b = 1;
+        if (n <= 1){
+            return n;
+        }
+        int a = 0;
+        int b = 1;
         for (int i = 2; i <= n; i++) {
             int temp = a + b;
             a = b;
@@ -38,11 +41,17 @@ public class Q6 {
         return b;
     }
 
-    // การคำนวณ Fibonacci โดยใช้ Recursion
+
     public static int fibRecursion(int n) {
 
-        if (n <= 1) {
-            return n;
+        if (n == 1) {
+            return 1;
+        }
+        if (n == 0){
+            return 0;
+        }
+        if (n <= -1){
+            return -1;
         }
 
         return fibRecursion(n - 1) + fibRecursion(n - 2);

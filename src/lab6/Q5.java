@@ -5,7 +5,7 @@ import java.util.Random;
 public class Q5 {
     public static void main(String[] args) {
         Random random = new Random();
-        int[] myArr = random.ints(10000, 1,100).toArray();
+        int[] myArr = random.ints(10000, 1,1000).toArray();
 
         findSmallestLoop(myArr);
 
@@ -38,6 +38,7 @@ public class Q5 {
         }
         return m;
     }
+
     // วิธีเรียกใน main: findSmallestRecursion(myArr, 0, myArr.length - 1)
     public static int findSmallestRecursionV2(int[] arr, int low, int high) {
         // 1. Termination condition: ถ้าเหลือสมาชิกตัวเดียว
